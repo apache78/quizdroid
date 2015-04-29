@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Quizdroid</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_MathQuestion1">Question1</string>
+    <string name="title_activity_answerpage">answer</string>
+    <string name="title_activity_mathquestion2">Question2</string>
+    <string name="title_activity_topoverview">topic overview</string>
+    <string name="smh_description">Think you know everything there is to know about the Avengers? Then tes your knowledge by taking this quiz!</string>
+    <string name="physics_desciption">Apples falling out of the tree and shit. Wanna know how long it takes for something to come to a stop? Knowing physics sure would help!</string>
+    <string name="math_desciption">Dude, it\'s math, it\'s like numbers and shit. Then when you think you\'re getting the hang of it, they throw in letters and tell you that letters can be numbers too! Like what the hell!?"</string>
+</resources>
