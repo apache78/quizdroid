@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.washington.apache78.quizdroid"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="22" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="edu.washington.apache78.quizdroid.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="edu.washington.apache78.quizdroid.MathQuestion1"
+            android:label="@string/title_activity_MathQuestion1" >
+        </activity>
+        <activity
+            android:name="edu.washington.apache78.quizdroid.answerpage"
+            android:label="@string/title_activity_answerpage" >
+        </activity>
+        <activity
+            android:name="edu.washington.apache78.quizdroid.Mathquestion2"
+            android:label="@string/title_activity_mathquestion2" >
+        </activity>
+        <activity
+            android:name="edu.washington.apache78.quizdroid.topoverview"
+            android:label="@string/title_activity_topoverview" >
+        </activity>
+    </application>
+
+</manifest>
