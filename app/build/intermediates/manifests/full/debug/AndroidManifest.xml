@@ -23,20 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.washington.apache78.quizdroid.MathQuestion1"
-            android:label="@string/title_activity_MathQuestion1" >
-        </activity>
-        <activity
-            android:name="edu.washington.apache78.quizdroid.answerpage"
-            android:label="@string/title_activity_answerpage" >
-        </activity>
-        <activity
-            android:name="edu.washington.apache78.quizdroid.Mathquestion2"
-            android:label="@string/title_activity_mathquestion2" >
-        </activity>
-        <activity
-            android:name="edu.washington.apache78.quizdroid.topoverview"
-            android:label="@string/title_activity_topoverview" >
+            android:name="edu.washington.apache78.quizdroid.MainActivity2"
+            android:label="@string/title_activity_main_activity2" >
         </activity>
     </application>
 
