@@ -17,20 +17,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MathQuestion1"
-            android:label="@string/title_activity_MathQuestion1" >
-        </activity>
-        <activity
-            android:name=".answerpage"
-            android:label="@string/title_activity_answerpage" >
-        </activity>
-        <activity
-            android:name=".Mathquestion2"
-            android:label="@string/title_activity_mathquestion2" >
-        </activity>
-        <activity
-            android:name=".topoverview"
-            android:label="@string/title_activity_topoverview" >
+            android:name=".MainActivity2"
+            android:label="@string/title_activity_main_activity2" >
         </activity>
     </application>
 

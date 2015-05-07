@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 
         theList.setOnItemClickListener(new ListView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                Intent next = new Intent(MainActivity.this, topoverview.class);
+                Intent next = new Intent(MainActivity.this, MainActivity2.class);
                 if(position==0) {
                     next.putExtra("TOPIC", "Math");
                 }else if(position==1){
