@@ -31,6 +31,9 @@ public class topicoverview extends Fragment implements View.OnClickListener {
     private OnFragmentInteractionListener mListener;
     private OnFragmentInteractionListener mCallback;
 
+    QuizApp App = QuizApp.getInstance();
+
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -58,6 +61,7 @@ public class topicoverview extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             TOPIC = getArguments().getString("TOPIC");
+            App.current=getArguments().getInt("INDEX");
            // mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
@@ -68,9 +72,10 @@ public class topicoverview extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_topicoverview, container, false);
         String strtext = TOPIC;
-        TextView topic = (TextView) view.findViewById(R.id.topic);
         setText(strtext, view);
-        getDescription(strtext,view);
+        getDescription(strtext, view);
+        TextView numberofQuestions = (TextView) view.findViewById(R.id.totalq);
+        numberofQuestions.append(""+App.getRepo().totalQuestions());
         Button start = (Button) view.findViewById(R.id.btnStart);
         start.setOnClickListener(this);
 
@@ -84,14 +89,8 @@ public class topicoverview extends Fragment implements View.OnClickListener {
 
     public void getDescription(String topic, View view){
         TextView description = (TextView) view.findViewById(R.id.desciption);
-        if(topic.equalsIgnoreCase("math")){
-            description.setText(R.string.math_desciption);
-        }else if(topic.equalsIgnoreCase("physics")){
-            description.setText(R.string.physics_desciption);
-        }else{
-            TOPIC = "msh";
-            description.setText(R.string.msh_description);
-        }
+        description.setText(App.getRepo().getDesciption());
+
 
     }
 

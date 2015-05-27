@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentActivity;
 
 
 public class MainActivity2 extends FragmentActivity
-        implements topicoverview.OnFragmentInteractionListener, answer.OnFragmentInteractionListener,question.OnFragmentInteractionListener {
+        implements topicoverview.OnFragmentInteractionListener, answer.OnFragmentInteractionListener,questionFragment.OnFragmentInteractionListener {
 
     private int correct;
     private int total;
@@ -50,10 +50,11 @@ public class MainActivity2 extends FragmentActivity
     }
 
     public void startQuiz(String topic){
-        currentquestion=1;
-        question fragment = new question();
+        currentquestion=0;
+        questionFragment fragment = new questionFragment();
         Bundle args = new Bundle();
         this.topic=topic;
+        QuizApp.getInstance().getRepo().setTopic(topic);
         args.putInt("CURRENT", currentquestion);
         args.putString("TOPIC", topic);
         fragment.setArguments(args);
@@ -78,7 +79,7 @@ public class MainActivity2 extends FragmentActivity
         args.putInt("CORRECT", correct);
         args.putInt("TOTAL", total);
 
-        if(currentquestion == 6){
+        if(currentquestion == QuizApp.getInstance().getRepo().totalQuestions()){
             args.putBoolean("LAST", true);
         }else {
             args.putBoolean("LAST", false);
@@ -109,7 +110,7 @@ public class MainActivity2 extends FragmentActivity
 
     @Override
     public void onNextQuestion(String s) {
-        question fragment = new question();
+        questionFragment fragment = new questionFragment();
         Bundle args = new Bundle();
         args.putInt("CURRENT", currentquestion);
         args.putString("TOPIC", topic);
