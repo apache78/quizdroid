@@ -16,18 +16,18 @@
         <dex dex="C:\Users\apache78\Documents\INFO498C\quizdroid\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-66f7b0ee81ce6e3b787642b87df84fb210fac1c5.jar" />
     </item>
     <item
-        jar="C:\Users\apache78\Documents\INFO498C\quizdroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="C:\Users\apache78\Documents\INFO498C\quizdroid\app\build\intermediates\pre-dexed\debug\classes-8c268d1e2d9022551bf78348922168d1ee69fadf.jar" />
-    </item>
-    <item
         jar="C:\Users\apache78\Documents\INFO498C\quizdroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
         <dex dex="C:\Users\apache78\Documents\INFO498C\quizdroid\app\build\intermediates\pre-dexed\debug\classes-8e6a66508925755b8c061bb6daa8ee2de8dee280.jar" />
+    </item>
+    <item
+        jar="C:\Users\apache78\Documents\INFO498C\quizdroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="C:\Users\apache78\Documents\INFO498C\quizdroid\app\build\intermediates\pre-dexed\debug\classes-8c268d1e2d9022551bf78348922168d1ee69fadf.jar" />
     </item>
 
 </items>

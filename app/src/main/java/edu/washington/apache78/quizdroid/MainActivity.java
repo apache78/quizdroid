@@ -1,11 +1,17 @@
 package edu.washington.apache78.quizdroid;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -47,9 +53,31 @@ public class MainActivity extends ActionBarActivity implements SharedPreferences
         ArrayAdapter<String> items = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, topics);
         theList.setAdapter(items);
 
+        ConnectivityManager connectivityManager = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo network = connectivityManager.getActiveNetworkInfo();
+        boolean online = network !=null && network.isConnectedOrConnecting();
+        boolean airplanemode=false;
 
+        try {
+            airplanemode=isAirplaneModeOn(MainActivity.this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-
+        if(!online){
+            Toast.makeText(MainActivity.this, "Error, no network connection.", Toast.LENGTH_LONG).show();
+            if(airplanemode){
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.setMessage("Airplane mode is on. Please disable to access network.")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivity(new Intent(Settings.ACTION_AIRPLANE_MODE_SETTINGS));
+                            }
+                        })
+                        .show();
+            }
+        }
 
 
         theList.setOnItemClickListener(new ListView.OnItemClickListener() {
@@ -69,6 +97,13 @@ public class MainActivity extends ActionBarActivity implements SharedPreferences
                 finish();
             }
         });
+    }
+
+    private static boolean isAirplaneModeOn(Context context) {
+
+        return Settings.System.getInt(context.getContentResolver(),
+                Settings.System.AIRPLANE_MODE_ON, 0) != 0;
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

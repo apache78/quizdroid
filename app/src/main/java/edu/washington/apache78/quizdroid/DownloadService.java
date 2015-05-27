@@ -3,6 +3,7 @@ package edu.washington.apache78.quizdroid;
 import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
@@ -40,6 +41,7 @@ public class DownloadService extends IntentService {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            Toast.makeText(getApplicationContext(), "File download fialed",Toast.LENGTH_LONG ).show();
             e.printStackTrace();
         }finally {
             try{
